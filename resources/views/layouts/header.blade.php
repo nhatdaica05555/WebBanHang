@@ -20,7 +20,7 @@
                 <li><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
                 <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
                 
-                <li  id="qty"><a><i>0</i></a></li>
+                <li  id="qty"><a><i>{{Cart::count()}}</i></a></li>
               </ul>
             </div>
             <div class="item">

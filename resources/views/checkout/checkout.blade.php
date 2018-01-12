@@ -6,6 +6,11 @@
 
 @section('content')
 <div class="page-container">
+    <form>
+
+
+
+    </form>
         <div data-bottom-top="background-position: 50% 50px;" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -50px;" class="page-title page-reservation">
           <div class="container">
             <div class="title-wrapper">
@@ -18,92 +23,71 @@
         <div class="page-content-wrapper">
           <section class="section-reservation-form padding-top-100 padding-bottom-100">
             <div class="container">
-              <div class="section-content">
-                <div class="swin-sc swin-sc-title style-2">
-                  <h3 class="title"><span>Chi tiết giỏ hàng</span></h3>
-                </div>
-                <div class="reservation-form">
-                  <div class="swin-sc swin-sc-contact-form light mtl">
-                    <table class="table table-striped" style="text-align: center;">
-                        <thead>
-                          <tr>
-                            <th width="30%" style="text-align: center;">Product</th>
-                            <th width="20%" style="text-align: center;">Price</th>
-                            <th width="20%" style="text-align: center;">Qty.</th>
-                            <th width="20%" style="text-align: center;">Total</th>
-                            <th width="10%" style="text-align: center;">Remove</th>
-                     
-                          </tr>
-                        </thead>
-                        @foreach(Cart::content() as $it)
-                        <tbody>
-                          <tr>
-                            <td>
-                              <img src="assets/images/hinh_mon_an/{{$it->options->image}}" width="250px" alt="this is an image">
-                              <p><br><b>{{$it->name}}</b></p>
-                            </td>
-                            <td class="price {{$it->id}}">{{$it->price}}</td>
-                            <td>
-                            
-                              <input class="qty" id="{{$it->id}}" value="{{$it->qty}}">
-                             
-                       
-                            </td>
-                            <td class="total {{$it->id}}">{{$it->price*$it->qty}}</td>
-                            <td><a href="" class="remove" title="Remove this item"><i class="fa fa-trash-o fa-2x"></i></a></td>
-                            
-                          </tr>
-                         
-                        </tbody>
-                        @endforeach
-                    </table>     
-                   
-                  </div>
-                  
-                  <div class="swin-sc swin-sc-contact-form light mtl style-full">
-                    <div class="swin-sc swin-sc-title style-2">
-                      <h3 class="title"><span>Đặt hàng</span></h3>
-                    </div>
-                    <form>
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                          <input type="text" placeholder="Fullname" class="form-control">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-                          <input type="text" placeholder="Email" class="form-control">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <div class="fa fa-map-marker"></div>
-                          </div>
-                          <input type="text" placeholder="Address" class="form-control">
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="input-group">
-                          <div class="input-group-addon">
-                            <div class="fa fa-phone"></div>
-                          </div>
-                          <input type="text" placeholder="Phone" class="form-control">
-                        </div>
-                      </div>
 
-                      <div class="form-group">
-                        <textarea placeholder="Message" class="form-control"></textarea>
+              <form method= "POST" action="{{route('postCart')}}" >
+                  <div class="section-content">
+                      <div class="swin-sc swin-sc-title style-2">
+                        <h3 class="title"><span>Chi tiết giỏ hàng</span></h3>
                       </div>
-                       <div class="form-group">
-                        <div class="swin-btn-wrap center"><a href="" class="swin-btn center form-submit"> <span>Checkout</span></a></div>
-                      </div>
-                    </form>
-                  </div>
-                  </div>
-              </div>
+                      <div class="reservation-form">
+                        <div class="swin-sc swin-sc-contact-form light mtl">
+                       
+                          @include('checkout.cart')
+                         
+                        </div>
+                        
+      
+      
+                        <div class="swin-sc swin-sc-contact-form light mtl style-full">
+                          <div class="swin-sc swin-sc-title style-2">
+                            <h3 class="title"><span>Đặt hàng</span></h3>
+                          </div>
+                          
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                <input id = 'name' type="text" placeholder="Fullname" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+                                <input id = 'email' type="text" placeholder="Email" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon">
+                                  <div class="fa fa-map-marker"></div>
+                                </div>
+                                <input id = 'address' type="text" placeholder="Address" class="form-control">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <div class="input-group">
+                                <div class="input-group-addon">
+                                  <div class="fa fa-phone"></div>
+                                </div>
+                                <input id = 'phone' type="text" placeholder="Phone" class="form-control">
+                              </div>
+                            </div>
+      
+                            <div class="form-group">
+                              <textarea id = 'note' placeholder="Message" class="form-control"></textarea>
+                            </div>
+                             <div class="form-group">
+                              <div class="swin-btn-wrap center"><a href="" class="swin-btn center form-submit"> <span>Checkout</span></a></div>
+                            </div>
+                         
+                        </div>
+                        </div>
+                    </div>
+
+              </form>
+             
+
+
+
             </div>
           </section>
           <section data-bottom-top="background-position: 50% 100px;" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" class="section-reservation-service padding-top-100 padding-bottom-100">
@@ -167,13 +151,14 @@
 
       //fix quantity
      $('body').on('keyup','.qty',function(e){
-     
         e.preventDefault();
         var qty =  this.value;
         var idItem = this.id;
         var price = parseInt($('.price.'+idItem).text());
         console.log(price);
         $('.total.'+idItem).html(qty*price);
+        
+        
       });
       
       //update quantity
@@ -189,9 +174,12 @@
       //Delete item
       $('body').on("click",'.remove',function(e){
         e.preventDefault();
+
        var idItem = this.id;
+        console.log(idItem);
+
         $.post('ajax/Delete',{idItem : idItem},function(data , status){
-         console.log(data.id);
+          location.reload();
         });
       });
     

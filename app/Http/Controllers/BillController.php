@@ -59,7 +59,7 @@ class BillController extends Controller
 
         Cart::remove($rowId);
 
-        return view('checkout.checkout');
+        return view('checkout.cart');
     }
 
     /**
@@ -68,9 +68,12 @@ class BillController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function changePrice(Request $request)
+    public function postCart(Request $request)
     {
-       
+        
+        // add v
+
+
     }
 
     /**
@@ -104,7 +107,11 @@ class BillController extends Controller
      */
     public function update(Request $request, Bill $bill)
     {
-        //
+        //Add to table  customer  dua vao id_customer
+
+
+
+        //add to table  bills -> id_bill -> compare with 'id_bill' in 'bill_detail' , 
     }
 
     /**

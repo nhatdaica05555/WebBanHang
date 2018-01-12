@@ -22,12 +22,20 @@ Route::get('home','HomeController@index');
 Route::get('danh-sach-thuc-don','MenuController@index')->name("thucdon");
 
 Route::get('check-out','BillDetailController@index')->name('checkout');
+Route::post('check-out','BillDetailController@postCart')->name('postCart');
+
 
 Route::post('ajax/checkout','MenuController@addCart')->name('cart');
 
 Route::get('delete',function(){
     Cart::destroy();
 });
+
+
+
+
+
+
 
 Route::get('ajax/products',function(){
     $food = Food::paginate(6);
@@ -38,6 +46,9 @@ Route::post('ajax/changeQty','BillController@changeQty');
 Route::post('ajax/Delete','BillController@Delete');
 
 Route::post('ajax/changePrice','BillController@changePrice');
+
+
+
 
 
 
