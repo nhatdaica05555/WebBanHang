@@ -124,7 +124,7 @@
     <script src="assets/js/elements.js"></script>
     <script src="assets/js/widget.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
+    {{--  <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -132,7 +132,7 @@
       ga('create', 'UA-102426561-1', 'auto');
       ga('send', 'pageview');
       
-    </script>
+    </script>  --}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdXpLSJ3Ibdu-Phs9QOvpqb9d1DtPf7wQ"></script>
     <script src="assets/js/map.js"></script>
     

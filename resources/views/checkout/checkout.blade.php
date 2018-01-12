@@ -42,14 +42,14 @@
                               <img src="assets/images/hinh_mon_an/{{$it->options->image}}" width="250px" alt="this is an image">
                               <p><br><b>{{$it->name}}</b></p>
                             </td>
-                            <td>{{$it->price}}</td>
+                            <td class="price {{$it->id}}">{{$it->price}}</td>
                             <td>
                             
                               <input class="qty" id="{{$it->id}}" value="{{$it->qty}}">
                              
                        
                             </td>
-                            <td>{{$it->price*$it->qty}}</td>
+                            <td class="total {{$it->id}}">{{$it->price*$it->qty}}</td>
                             <td><a href="" class="remove" title="Remove this item"><i class="fa fa-trash-o fa-2x"></i></a></td>
                             
                           </tr>
@@ -171,9 +171,9 @@
         e.preventDefault();
         var qty =  this.value;
         var idItem = this.id;
-       
-
-        //$('.total '+idItem).html(qty*price);
+        var price = parseInt($('.price.'+idItem).text());
+        console.log(price);
+        $('.total.'+idItem).html(qty*price);
       });
       
       //update quantity
