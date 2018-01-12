@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bill_detail;
 use Cart;
 use Illuminate\Http\Request;
+use App\Customer;
 
 class BillDetailController extends Controller
 {
@@ -18,6 +19,21 @@ class BillDetailController extends Controller
         //
       
         return view('checkout.checkout');
+    }
+    public function UploadBill(Request $request)
+    {
+        //Add to table  customer  dua vao id_customer
+
+     $cus = new Customer;
+
+     $cus->name = $request->name;
+     $cus->email = $request->email;
+     $cus->address = $request->address;
+     $cus->phone = $request->phone;
+     $cus->note = $request->note;
+     $cus->save();
+        return redirect('home')->with('thongbao',"Success!");
+        //add to table  bills -> id_bill -> compare with 'id_bill' in 'bill_detail' , 
     }
 
     /**

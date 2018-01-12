@@ -36,6 +36,10 @@ class CartRequest extends FormRequest
     {
         return [
             //
+            'name.required' => "Vui long nhap ten",
+            'email.required' => "Vui long nhap email",
+            'address.required' => "Vui long nhap address",
+            'phone.required' => "Vui long nhap phone"
         ];
     }
 }

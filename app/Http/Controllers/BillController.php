@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Bill;
 use Illuminate\Http\Request;
 use Cart;
+
 class BillController extends Controller
 {
     /**
@@ -105,14 +106,7 @@ class BillController extends Controller
      * @param  \App\Bill  $bill
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bill $bill)
-    {
-        //Add to table  customer  dua vao id_customer
-
-
-
-        //add to table  bills -> id_bill -> compare with 'id_bill' in 'bill_detail' , 
-    }
+   
 
     /**
      * Remove the specified resource from storage.
@@ -122,6 +116,6 @@ class BillController extends Controller
      */
     public function destroy(Bill $bill)
     {
-        //
+        
     }
 }

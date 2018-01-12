@@ -22,7 +22,7 @@ Route::get('home','HomeController@index');
 Route::get('danh-sach-thuc-don','MenuController@index')->name("thucdon");
 
 Route::get('check-out','BillDetailController@index')->name('checkout');
-Route::post('check-out','BillDetailController@postCart')->name('postCart');
+Route::post('check-out','BillDetailController@UploadBill')->name('postCart');
 
 
 Route::post('ajax/checkout','MenuController@addCart')->name('cart');
