@@ -49,22 +49,24 @@
   </div>
 @endsection
 
-{{--  @section('script')
+ @section('script')
 
 
 <script>
 
 
         $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-    });
+          headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+        });
 
         $(document).on('click','.pagination a',function(e){
             e.preventDefault();
+           
+
             var page = $(this).attr('href').split('page=')[1]; 
-             console.log(page);
+           
             $.get('/ajax/search?page='+page,function(data){
               console.log(data);
               
@@ -77,4 +79,4 @@
         
 </script>
  
-@endsection  --}}
+@endsection 

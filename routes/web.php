@@ -37,12 +37,13 @@ Route::get('ajax/products',function(){
     return view('thucdon.pagination', compact('food'))->render();
 });
 
-// Route::get('ajax/search',function(Request $request){
-//     $key  = $request->key;
-//     $search_food = Food::where('name','like',"%$key%")->orWhere('detail','like',"%$key%")->orWhere('price','like',"%$key%")->paginate(6);
-//     return view('search.pagination', compact('search_food'))->render();
+Route::get('ajax/search',function(){
+   
 
-// });
+    $search_food = Food::paginate(6);
+    return view('search.pagination', compact('search_food'))->render();
+
+});
 
 
 

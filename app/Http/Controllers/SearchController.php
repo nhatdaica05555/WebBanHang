@@ -12,10 +12,10 @@ class SearchController extends Controller
     {
         //
 
-        $key  = $request->key;
+        $key  = $request->page;
     
         
-        $search_food = Food::where('name','like',"%$key%")->orWhere('detail','like',"%$key%")->orWhere('price','like',"%$key%")->paginate(6);
+        $search_food = Food::where('name','like','%'.$key.'%')->orWhere('detail','like','%'.$key.'%')->orWhere('price','like','%'.$key.'%')->paginate(6);
 
         return view('search.search',compact('search_food','key'))->RENDER();
 

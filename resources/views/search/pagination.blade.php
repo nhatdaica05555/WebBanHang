@@ -13,9 +13,9 @@
                               <div class="group-btn"><a href="javascript:void(0)" class="swin-btn btn-link"><i class="icons fa fa-link"></i></a><a href="javascript:void(0)" class="swin-btn btn-add-to-card"><i class="fa fa-shopping-basket"></i></a></div>
                             </div>
                             <div class="block-content">
-                              <h5 class="title"><a href="javascript:void(0)">{!! doimau($sf->name,$key) !!}</a></h5>
+                              <h5 class="title"><a href="javascript:void(0)">{{-- {!! doimau($sf->name,$key) !!} --}}</a></h5>
                               <div class="product-info">
-                                      {!! doimau($sf->detail,$key) !!}
+                                      {{-- {!! doimau($sf->detail,$key) !!} --}}
                               </div>
                             </div>
                           </div>
