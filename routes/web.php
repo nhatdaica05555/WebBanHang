@@ -24,6 +24,13 @@ Route::get('danh-sach-thuc-don','MenuController@index')->name("thucdon");
 Route::get('check-out','BillDetailController@index')->name('checkout');
 Route::post('check-out','BillDetailController@UploadBill')->name('postCart');
 
+Route::get('login','UserController@getLogin')->name('getLogin');
+Route::post('login','UserController@postLogin')->name('postLogin');
+Route::get('register','UserController@getRegister')->name('getRegister');
+Route::post('register','UserController@postRegister')->name('postRegister');
+
+Route::get('logout','UserController@logout')->name('logout');
+
 
 Route::post('ajax/checkout','MenuController@addCart')->name('cart');
 

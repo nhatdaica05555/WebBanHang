@@ -76,8 +76,10 @@
                                   <input  class="swin-btn-wrap center" type="submit" value="Checkout">
                                   {{--  <div class="swin-btn-wrap center"><a href="{{route('postCart')}}" class="swin-btn center form-submit"> <span>Checkout</span></a></div>  --}}
                                 </div>
-
+                                
+                                
                           </form>
+
                        
                        
                       </div>

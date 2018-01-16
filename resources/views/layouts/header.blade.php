@@ -15,17 +15,44 @@
           <div class="topbar-content">
             <div class="item">
               <ul class="socials-nb list-inline wg-social">
-                <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
-                <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
-                
+  
                 <li  id="qty"><a><i>{{Cart::count()}}</i></a></li>
               </ul>
             </div>
             <div class="item">
               <div class="wg-social"><a href="{{route('checkout')}}"><i class="fa fa-shopping-cart fa-2x"></i><span>Shopping Cart</span></a></div>
+              
             </div>
+            {{--  neu chua dang nhap thi hien Login-register  --}}
+            @if (!Auth::check())
+             <div class="item">
+
+                <div class="wg-social"><a href="{{route('getLogin')}}"><i class="fa fa-sign-in"></i><span>Login - Register</span></a></div>
+                
+              </div>
+              @else
+
+              <div class="item">
+
+                  <div class="wg-social"><a href="{{route('getLogin')}}">
+                    {{--  check gioi tinh  --}}
+                    {{--  neu la gender = nam thi icon nam va nguoc lai  --}}
+                    @if (Auth::user()->gender == 'Nam')
+                      <i class="fa fa-male"></i><span>{{Auth::user()->username}}</span></a></div>
+                    @else
+                    <i class="fa fa-female"></i><span>{{Auth::user()->username}}</span></a></div>
+                    @endif
+                </div>
+                <div class="item">
+
+                    <div class="wg-social"><a href="{{route('logout')}}"><i class="fa fa-sign-out"></i><span>Logout</span></span></a></div>
+                    
+                  </div>
+
+            @endif
+            
+
+            {{--  neu da dang nhap thi hien username - logout  --}}
           </div>
         </div>
       </div>
@@ -53,10 +80,13 @@
             <ul id="main-nav" class="nav nav-pills">
               <li><a class="current-menu-item" href="home">Home</a></li>
               <li><a href="{{route('thucdon')}}">Thực đơn</a></li>
-              <li><a href="mon-an-theo-mua.html">Món ăn theo mùa</a></li>
+            
               <li><a href="tim-kiem.html">Tìm kiếm</a></li>
               <li><a href="about">Giới thiệu</a></li>
               <li><a href="contact">Liên hệ</a></li>
+            
+            
+             
             </ul>
           </div>
         </nav>
