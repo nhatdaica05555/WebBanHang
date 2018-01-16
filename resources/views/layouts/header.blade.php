@@ -9,6 +9,20 @@
             <div class="item"> 
               <div class="wg-contact"><i class="fa fa-phone"></i><span>0163 296 7751</span></div>
             </div>
+            <div class="item"> 
+            <form method="POST" action="search">
+              {{csrf_field()}}
+                <div class="item"> 
+                    <input name="key" type="text" value="" class="form-control" style="
+                    height: fit-content;color: white;">
+                </div>
+                <div class="item"> 
+                    <button type="submit" class="btn btn-default">Search</button>
+                </div>
+
+            </form>
+          </div>
+            
           </div>
         </div>
         <div class="topbar-right">

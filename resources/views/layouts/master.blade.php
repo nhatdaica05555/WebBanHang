@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="assets/vendors/bootstrap-datepicker/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="assets/vendors/pageloading/css/component.min.css">
     <!-- Font-icon-->
-    <link rel="stylesheet" href="assets/fonts/font-icon/style.css">
+    <link rel="stylesheet" href="assets/fonts/font-icon/style.css">x
     <!-- Style-->
     <link rel="stylesheet" type="text/css" href="assets/css/layout.css">
     <link rel="stylesheet" type="text/css" href="assets/css/elements.css">
